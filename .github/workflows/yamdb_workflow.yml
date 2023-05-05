@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.USERNAME }}/yandex_practicum:latest
+          tags: ${{ secrets.USERNAME }}/yandex_practicum1:latest
           context: ./api_yamdb
           file: ./api_yamdb/Dockerfile
 
