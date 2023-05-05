@@ -8,7 +8,9 @@ services:
     env_file:
       - ./.env
   web:
-    image: pohioki/yamdb_version8:latest
+    build:
+      context: ../api_yamdb/
+      dockerfile: Dockerfile
     restart: always
     volumes:
       - static_value:/app/static/

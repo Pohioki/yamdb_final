@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.USERNAME }}/yamdb_version8:latest
+          tags: ${{ secrets.USERNAME }}/yamdb_final_v3:latest
           context: ./api_yamdb
           file: ./api_yamdb/Dockerfile
 
@@ -65,6 +65,7 @@ jobs:
             sudo docker pull pohioki/yamdb_version8:latest
             sudo docker-compose stop
             sudo docker-compose rm web
+            rm .env
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
             echo DB_NAME=${{ secrets.DB_NAME }} >> .env
