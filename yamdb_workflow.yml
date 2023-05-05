@@ -45,7 +45,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.USERNAME }}/yamdb_version3:latest
+          tags: ${{ secrets.USERNAME }}/yamdb_version8:latest
           context: ./api_yamdb
           file: ./api_yamdb/Dockerfile
 
@@ -62,7 +62,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
-            sudo docker pull ruin392/yandex_prc:latest
+            sudo docker pull pohioki/yamdb_version8:latest
             sudo docker-compose stop
             sudo docker-compose rm web
             touch .env
